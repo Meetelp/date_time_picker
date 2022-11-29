@@ -750,9 +750,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       _dateLabelController.text = lsFormatedDate;
       _effectiveController?.text = _sValue;
 
-      if (_sValue != lsOldValue) {
         onChangedHandler(_sValue);
-      }
     }
   }
 
@@ -812,9 +810,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       _sValue = _sValue.trim();
       _effectiveController?.text = _sValue;
 
-      if (_sValue != lsOldValue) {
-        onChangedHandler(_sValue);
-      }
+      onChangedHandler(_sValue);
     }
   }
 
@@ -910,9 +906,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       _dateLabelController.text = lsFormatedDate;
       _effectiveController?.text = _sValue;
 
-      if (_sValue != lsOldValue) {
-        onChangedHandler(_sValue);
-      }
+      onChangedHandler(_sValue);
     }
   }
 }
