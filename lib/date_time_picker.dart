@@ -177,7 +177,6 @@ class DateTimePicker extends FormField<String> {
     TextAlignVertical? textAlignVertical,
     bool autofocus = false,
     bool readOnly = false,
-    ToolbarOptions? toolbarOptions,
     bool showCursor = false,
     bool obscureText = false,
     bool autocorrect = true,
@@ -306,7 +305,6 @@ class DateTimePicker extends FormField<String> {
                 //textDirection: textDirection,
                 textCapitalization: textCapitalization,
                 autofocus: autofocus,
-                toolbarOptions: toolbarOptions,
                 showCursor: showCursor,
                 obscureText: obscureText,
                 autocorrect: autocorrect,
@@ -730,7 +728,6 @@ class _DateTimePickerState extends FormFieldState<String> {
     if (ldDatePicked != null) {
       _sDate = DateFormat('yyyy-MM-dd', languageCode).format(ldDatePicked);
       _dDate = ldDatePicked;
-      final lsOldValue = _sValue;
       _sValue = _sDate;
       String lsFormatedDate;
 
@@ -750,7 +747,7 @@ class _DateTimePickerState extends FormFieldState<String> {
       _dateLabelController.text = lsFormatedDate;
       _effectiveController?.text = _sValue;
 
-        onChangedHandler(_sValue);
+      onChangedHandler(_sValue);
     }
   }
 
@@ -800,7 +797,6 @@ class _DateTimePickerState extends FormFieldState<String> {
       _tTime = ltTimePicked;
 
       _timeLabelController.text = _sTime;
-      final lsOldValue = _sValue;
       _sValue = _sTime;
 
       if (widget.type == DateTimePickerType.dateTimeSeparate && _sDate != '') {
@@ -890,7 +886,6 @@ class _DateTimePickerState extends FormFieldState<String> {
         _sTime = '$lsHour:$lsMinute';
       }
 
-      final lsOldValue = _sValue;
       _sValue = '$_sDate $_sTime';
       _sValue = _sValue.trim();
 
